@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "64a76064-f4e3-4d23-9ec6-0145f66ce54c",
+		"name": "customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34780196"
+	},
+	"item": [
+		{
+			"name": "createCustomer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Customer32\",\n\t\"address\": \"address32\",\n\t\"phoneNumber\": \"08123456125\",\n    \"email\": \"customer32@example.com\"\n}"
+				},
+				"url": {
+					"raw": "{{localhost}}/customers",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomerById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/customers/7",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"customers",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCustomers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"pageSizeRequest\": {\r\n        \"page\": 1,\r\n        \"size\": 15,\r\n        \"includeDeleted\": true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{localhost}}/customers",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCustomer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Customer1 Update4\",\n\t\"address\": \"address1 Update4\",\n\t\"phoneNumber\": \"08223456789\"\n}"
+				},
+				"url": {
+					"raw": "{{ _.localhost }}/customers/1",
+					"host": [
+						"{{ _.localhost }}"
+					],
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCustomer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{ _.localhost }}/customers/15",
+					"host": [
+						"{{ _.localhost }}"
+					],
+					"path": [
+						"customers",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generateAllCustomersDataExcel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ _.localhost }}/customers/report/getAllCustomerData",
+					"host": [
+						"{{ _.localhost }}"
+					],
+					"path": [
+						"customers",
+						"report",
+						"getAllCustomerData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bulkSave",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": ""
+						},
+						{
+							"key": "groupName",
+							"value": "1"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ _.localhost }}/customers/bulkSave?groupName=1",
+					"host": [
+						"{{ _.localhost }}"
+					],
+					"path": [
+						"customers",
+						"bulkSave"
+					],
+					"query": [
+						{
+							"key": "groupName",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

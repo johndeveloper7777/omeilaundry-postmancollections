@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "2678915b-75f0-4fca-8f00-57cc11638c08",
+		"name": "product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34780196"
+	},
+	"item": [
+		{
+			"name": "UnitOfMeasurement",
+			"item": [
+				{
+					"name": "createUnitOfMeasurement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"code\": \"sss\",\n\t\"description\": \"dsfsff\"\n}"
+						},
+						"url": {
+							"raw": "{{ _.localhost }}/unitofmeasurement",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"unitofmeasurement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUnitOfMeasurement",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{ _.localhost }}/unitofmeasurement",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"unitofmeasurement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUnitOfMeasurementById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ _.localhost }}/unitofmeasurement/2",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"unitofmeasurement",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUnitOfMeasurement",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"code\": \"MIX\",\n\t\"description\": \"Gabungan\"\n}"
+						},
+						"url": {
+							"raw": "{{ _.localhost }}/unitofmeasurement/3",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"unitofmeasurement",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUnitOfMeasurement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ _.localhost }}/unitofmeasurement/16",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"unitofmeasurement",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductPrice",
+			"item": [
+				{
+					"name": "createProductPrice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\": 6,\n\t\"unitOfMeasurement\": \"KG\",\n\t\"price\": 6000\n}"
+						},
+						"url": {
+							"raw": "{{ _.localhost }}/productprice",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"productprice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductPrice",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{ _.localhost }}/productprice",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"productprice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductPriceById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ _.localhost }}/productprice/1",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"productprice",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProductPrice",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\": 6,\n\t\"unitOfMeasurement\": \"KG\",\n\t\"price\": 6500\n}"
+						},
+						"url": {
+							"raw": "{{ _.localhost }}/productprice/6",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"productprice",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "uploadFile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:7777/products/bulkSave",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"products",
+								"bulkSave"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateAllProductDataExcel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/products/report/getAllProductData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"products",
+								"report",
+								"getAllProductData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProduct",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7777/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productName\": \"Cuci lipat Reguler\",\n\t\"productDescription\": \"Cuci lipat 3 hari\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7777/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productName\": \"Cuci, lipat Reguler\",\n\t\"productDescription\": \"Cuci lipat 3 hari\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7777/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

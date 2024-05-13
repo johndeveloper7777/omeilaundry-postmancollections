@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "d38ad57d-e3f1-4e73-b5b5-ed295830f16c",
+		"name": "transaction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34780196"
+	},
+	"item": [
+		{
+			"name": "json_generator",
+			"item": [
+				{
+					"name": "generateCreateOrderRequestJson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{ _.localhost }}/orders/json/generateCreateOrderRequestJson",
+							"host": [
+								"{{ _.localhost }}"
+							],
+							"path": [
+								"orders",
+								"json",
+								"generateCreateOrderRequestJson"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "PaymentStatusUnpaid",
+					"item": [
+						{
+							"name": "cash",
+							"item": [
+								{
+									"name": "createOrderWithoutCustomerId",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customerName\": \"Elin\",\n  \"partialPayment\": 0,\n  \"paymentStatus\": \"UNPAID\",\n  \"paymentType\": \"CASH\",\n  \"createOrderDetailRequests\": [\n    {\n      \"productId\": 2,\n      \"qty\": 3.6,\n      \"unitOfMeasurement\": \"kg\",\n      \"price\": 6000\n    }\n  ]\n}"
+										},
+										"url": {
+											"raw": "{{ _.localhost }}/orders",
+											"host": [
+												"{{ _.localhost }}"
+											],
+											"path": [
+												"orders"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
